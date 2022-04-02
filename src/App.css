@@ -1,0 +1,12 @@
+body{
+    background-image: url("./assets/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    min-height: 100vh;
+    /* background: linear-gradient(to bottom,
+     rgb(224, 216, 217), rgb(83, 77, 77)
+    ); */
+}
