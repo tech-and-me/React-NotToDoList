@@ -11,6 +11,7 @@ function App() {
 
   //state to store all the task lists
   const [taskLists, setTaskList] = useState([]);
+  const [badLists, setBadList] = useState([]);
 
   const addToTaskList = taskObj => {
     console.log(taskObj); // to read
@@ -26,6 +27,18 @@ function App() {
   }
 
   // 2. switch task to bad list when you click on the arrow button
+  const shiftToBadList = i => {
+    // get the item that to be shifted
+    const item = taskLists[i];
+    console.log(item)
+
+    //get the item in the bad list
+    setBadList([...badLists, item]);
+
+    //remove the item from the task list
+    removeFromTaskLists(i);
+  }
+
 
   return (
     <div className="wrapper">
@@ -39,12 +52,12 @@ function App() {
         <Row>
           {/* for Task List */}
           <Col md="6">
-            <TaskList taskLists={taskLists} removeFromTaskLists={removeFromTaskLists}/>
+            <TaskList taskLists={taskLists} removeFromTaskLists={removeFromTaskLists} shiftToBadList={shiftToBadList}/>
           </Col>
 
            {/* for Bad List*/}
           <Col md="6">
-            <BadList />
+            <BadList badLists={badLists}/>
           </Col>
 
         </Row>

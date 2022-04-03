@@ -13,7 +13,7 @@ import { Button, Form, Table } from 'react-bootstrap'
 
 // 
 
-function TaskList({taskLists, removeFromTaskLists}) {
+function TaskList({taskLists, removeFromTaskLists, shiftToBadList}) {
     console.log(taskLists); // to read
     return (
     <div>
@@ -37,7 +37,7 @@ function TaskList({taskLists, removeFromTaskLists}) {
                                     <Button variant="danger" onClick={() => removeFromTaskLists(i)} >
                                         <i className="fa-solid fa-trash-can" ></i>
                                     </Button> {" "}
-                                    <Button variant="primary" >
+                                    <Button variant="primary" onClick={() => shiftToBadList(i)} >
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </Button>
                                 </td>

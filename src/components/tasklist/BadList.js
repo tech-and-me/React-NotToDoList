@@ -1,7 +1,12 @@
 import React from 'react'
 import { Button, Form, Table } from 'react-bootstrap'
 
-function BadList() {
+
+// 2. switch task to bad list when you click on the arrow button
+
+function BadList({badLists}) {
+
+
   return (
     <div>
     <h2 className="text-center">Bad List</h2>
@@ -9,13 +14,15 @@ function BadList() {
              <Table striped hover>
                   {/* delete thead */}
                   <tbody>
-                  <tr>
+                    {
+                      badLists.map((item, i) => (
+                      <tr key={i}>
                       <td>
                           <Form.Check type="checkbox" label="Check me out" />
                       </td>
                     
-                  <td>task</td>
-                  <td>hr</td>
+                      <td>{item.task}</td>
+                      <td>{item.hr}hrs</td>
 
                      
                       
@@ -31,6 +38,9 @@ function BadList() {
                           
                       </td>
                   </tr>   
+                      ))
+                    }
+                  
                   </tbody>
               </Table>
 
