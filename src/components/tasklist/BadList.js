@@ -24,6 +24,7 @@ function BadList() {
                           <Button variant="primary">
                               <i className="fa-solid fa-arrow-left"></i>
                           </Button>
+                          {" "}
                           <Button variant="danger" >
                               <i className="fa-solid fa-trash-can" ></i>
                           </Button> {" "}

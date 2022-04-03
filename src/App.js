@@ -8,6 +8,7 @@ import {useState} from "react";
 
 
 function App() {
+
   //state to store all the task lists
   const [taskLists, setTaskList] = useState([]);
 
@@ -16,7 +17,7 @@ function App() {
     setTaskList([...taskLists, taskObj]);
   }
 
-
+  console.log(taskLists); // to read
 
   return (
     <div className="wrapper">
@@ -48,8 +49,6 @@ function App() {
 
 
         </Row>
-
-
 
       </Container>
     </div>

@@ -16,7 +16,7 @@ export const  AddForm =({addToTaskList})=> {
         // console.log(name, value);
         setNewInfo({...newInfo,[name]:value}); // can rename the variable 'task' to newInfo 
     };
-    console.log(newInfo);
+    console.log(newInfo); // to write
 
     const handleOnSubmit = e =>{
         e.preventDefault();
