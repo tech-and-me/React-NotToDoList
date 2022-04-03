@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Table } from 'react-bootstrap'
 
 
-function TaskList(taskLists) {
+function TaskList({taskLists}) {
     console.log(taskLists); // to read
     return (
     <div>
@@ -14,9 +14,9 @@ function TaskList(taskLists) {
                         {
                             taskLists.map((item, i)=>(
 
-                            <tr>
+                            <tr key={i}>
                                 <td>
-                                    <Form.Check type="checkbox" label="Check me out" />
+                                    <Form.Check type="checkbox" label="" />
                                 </td>
                       
                                 <td>{item.task}</td>
