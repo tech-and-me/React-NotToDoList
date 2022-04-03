@@ -1,7 +1,8 @@
-import {Container} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import './App.css';
 import {AddForm} from "./components/form/AddForm";
 import TaskList from "./components/tasklist/TaskList";
+import BadList from "./components/tasklist/BadList";
 import Title from "./components/title/Title";
 import {useState} from "react";
 
@@ -11,7 +12,7 @@ function App() {
   const [taskLists, setTaskList] = useState([]);
 
   const addToTaskList = taskObj => {
-    console.log(taskObj);
+    console.log(taskObj); // to read
     setTaskList([...taskLists, taskObj]);
   }
 
@@ -20,13 +21,35 @@ function App() {
   return (
     <div className="wrapper">
       <Container>
-        {/*title​​​​​​​​ component*/}
+        
         <Title />
-        {/*form​ components*/}
+        
         <AddForm addToTaskList={addToTaskList}/>
 
         <hr />
-        <TaskList />
+        <Row>
+          {/* for Task List */}
+          <Col md="6">
+            <TaskList taskLists={taskLists}/>
+          </Col>
+
+           {/* for Bad List*/}
+          <Col md="6">
+            <BadList />
+          </Col>
+
+        </Row>
+
+        {/* Total hours */}
+        <Row>
+          <Col>
+            <h3 className="mt-5"> The total allocated hours</h3>
+          </Col>
+
+
+        </Row>
+
+
 
       </Container>
     </div>

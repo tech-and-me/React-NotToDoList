@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 
 const initialState = {
-    task: "hi",
+    task: "",
     hr: "",
 }
 
@@ -20,7 +20,7 @@ export const  AddForm =({addToTaskList})=> {
 
     const handleOnSubmit = e =>{
         e.preventDefault();
-        console.log(task); // can rename the variable 'task' to newInfo
+        // console.log(task); // can rename the variable 'task' to newInfo
         addToTaskList(task); // can rename the variable 'task' to newInfo
     }
 
@@ -30,12 +30,10 @@ export const  AddForm =({addToTaskList})=> {
     <Form onSubmit={handleOnSubmit}>
     <Row className="g-2">
         <Col xs={7}>
-        <Form.Control placeholder="task..."
-        name="phannaTask"
-        onChange={handleOnChange} />
+        <Form.Control placeholder="task..." name="task" onChange={handleOnChange} />
         </Col>
         <Col md={3}>
-        <Form.Control placeholder="hours..." name="hours" type="number" />
+        <Form.Control placeholder="hours..." name="hr" type="number" onChange={handleOnChange}/>
         </Col>
         <Col>
             <Button variant="primary" type="submit">Add Task</Button>

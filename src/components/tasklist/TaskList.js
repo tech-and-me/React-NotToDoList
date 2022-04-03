@@ -1,41 +1,42 @@
 import React from 'react'
-import { Button, Col, Form, Row, Table } from 'react-bootstrap'
-import FormRow from '../form/FormRow'
-
-function TaskList() {
-    
-    
+import { Button, Form, Table } from 'react-bootstrap'
 
 
-  return (
+function TaskList(taskLists) {
+    console.log(taskLists)
+    return (
     <div>
-        <Row>
-            <Col md="6">
-                <h2 className="text-center">Task List</h2>
-                <hr />
-
-                {/* Task List */}
-                <Table striped hover>
+      <h2 className="text-center">Task List</h2>
+      <hr />
+               <Table striped hover>
                     {/* delete thead */}
                     <tbody>
-                        <FormRow />
+                    <tr>
+                        <td>
+                            <Form.Check type="checkbox" label="Check me out" />
+                        </td>
+                      
+                    <td>task</td>
+                    <td>hr</td>
+
+                       
+                        
+                        <td className="text-end">
+                            <Button variant="danger" >
+                                <i className="fa-solid fa-trash-can" ></i>
+                            </Button> {" "}
+                            <Button variant="primary">
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </Button>
+                        </td>
+                    </tr>   
                     </tbody>
                 </Table>
-            </Col>
+          
             
 
             {/* Bad List */}
-            <Col md="6">
-                <h2 className="text-center">Bad List</h2>
-                <hr />
-                <Table striped hover>
-                    {/* delete thead */}
-                    <tbody>
-                        <FormRow />
-                    </tbody>
-                </Table>
-            </Col>
-        </Row>
+        
 
     </div>
   )
