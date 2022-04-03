@@ -21,10 +21,11 @@ function App() {
 
   // 1. delete on click delete button
   const removeFromTaskLists = i => {
-    alert(i);
+    // alert(i);
     const filteredArg =taskLists.filter((item, index) => index !==i);
     setTaskList(filteredArg);
   }
+
 
   // 2. switch task to bad list when you click on the arrow button
   const shiftToBadList = i => {
@@ -39,6 +40,11 @@ function App() {
     removeFromTaskLists(i);
   }
 
+  // 3. delete from the bad list
+    const removeFromBadLists = i => {
+      const filteredBadListsArg =badLists.filter((item, index) => index !==i);
+    setBadList(filteredBadListsArg);
+    }
 
   return (
     <div className="wrapper">
@@ -57,7 +63,7 @@ function App() {
 
            {/* for Bad List*/}
           <Col md="6">
-            <BadList badLists={badLists}/>
+            <BadList badLists={badLists} removeFromBadLists={removeFromBadLists}/>
           </Col>
 
         </Row>

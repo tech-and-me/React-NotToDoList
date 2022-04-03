@@ -4,8 +4,8 @@ import { Button, Form, Table } from 'react-bootstrap'
 
 // 2. switch task to bad list when you click on the arrow button
 
-function BadList({badLists}) {
-
+function BadList({badLists, removeFromBadLists}) {
+  console.log(removeFromBadLists);
 
   return (
     <div>
@@ -18,7 +18,7 @@ function BadList({badLists}) {
                       badLists.map((item, i) => (
                       <tr key={i}>
                       <td>
-                          <Form.Check type="checkbox" label="Check me out" />
+                          <Form.Check type="checkbox" label="" />
                       </td>
                     
                       <td>{item.task}</td>
@@ -32,7 +32,7 @@ function BadList({badLists}) {
                               <i className="fa-solid fa-arrow-left"></i>
                           </Button>
                           {" "}
-                          <Button variant="danger" >
+                          <Button variant="danger" onClick={() => removeFromBadLists(i)}>
                               <i className="fa-solid fa-trash-can" ></i>
                           </Button> {" "}
                           
