@@ -16,8 +16,12 @@ function App() {
     console.log(taskObj); // to read
     setTaskList([...taskLists, taskObj]);
   }
-
   console.log(taskLists); // to read
+
+  // 1. delete on click delete button
+  const removeFromTaskLists = i => {
+    alert(i);
+  }
 
   return (
     <div className="wrapper">
@@ -31,7 +35,7 @@ function App() {
         <Row>
           {/* for Task List */}
           <Col md="6">
-            <TaskList taskLists={taskLists}/>
+            <TaskList taskLists={taskLists} removeFromTaskLists={removeFromTaskLists}/>
           </Col>
 
            {/* for Bad List*/}
