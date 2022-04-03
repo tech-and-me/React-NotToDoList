@@ -8,20 +8,20 @@ const initialState = {
 
 export const  AddForm =({addToTaskList})=> {
    
-    const [task, setTask] = useState(initialState); // can rename the variable 'task' to newInfo
+    const [newInfo, setNewInfo] = useState(initialState); // can rename the variable 'task' to newInfo
     
 
     const handleOnChange = e => {
         const {name, value} = e.target;
         // console.log(name, value);
-        setTask({...task,[name]:value}); // can rename the variable 'task' to newInfo 
+        setNewInfo({...newInfo,[name]:value}); // can rename the variable 'task' to newInfo 
     };
-    console.log(task);
+    console.log(newInfo);
 
     const handleOnSubmit = e =>{
         e.preventDefault();
         // console.log(task); // can rename the variable 'task' to newInfo
-        addToTaskList(task); // can rename the variable 'task' to newInfo
+        addToTaskList(newInfo); // can rename the variable 'task' to newInfo
     }
 
   return (
