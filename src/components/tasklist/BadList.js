@@ -35,12 +35,7 @@ function BadList() {
               </Table>
 
               <h4 className="mt-3 text-danger"> You could have same:</h4>
-        
-          
-
-         
-      
-
+  
   </div>
   )
 }

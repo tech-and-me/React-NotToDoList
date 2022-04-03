@@ -11,6 +11,7 @@ import { Button, Form, Table } from 'react-bootstrap'
 // Additional 8. make the check box to be selected for the bulk delete
 // Additional 9. local storage
 
+// 
 
 function TaskList({taskLists, removeFromTaskLists}) {
     console.log(taskLists); // to read
