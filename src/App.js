@@ -8,11 +8,11 @@ import {useState} from "react";
 
 function App() {
   //state to store all the task lists
-  const [taskLists, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([]);
 
   const addToTaskList = taskObj => {
     console.log(taskObj);
-    setTaskList([...taskLists, taskObj]);
+    setTaskList([...taskList, taskObj]);
   }
 
 
@@ -26,7 +26,7 @@ function App() {
         <AddForm addToTaskList={addToTaskList}/>
 
         <hr />
-        <TaskList />
+        <TaskList taskList={taskList}/>
 
       </Container>
     </div>
